@@ -2,6 +2,7 @@
 import os
 import sys
 import glob
+import json
 import numpy as np
 from astropy.io import fits
 
@@ -18,6 +19,11 @@ for i in filelist:
 				    "DEC" : np.round(hd["DEC"], 4),
 				    "SNAME": hd["SNAME"],
 				    "DATE-OBS" : hd["DATE-OBS"]}}
+	print(center)
     gws.update(center)
-print(gws)
-		
+
+#Build JSON and write to file
+dumpjs = json.dumps(gws)
+textname = os.path.basename(sys.argv[1]) + '.txt'
+with open(textname, 'w') as rj:
+	rj.write(gws)
