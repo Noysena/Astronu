@@ -22,8 +22,33 @@ for i in filelist:
     print(center)
     gws.update(center)
 
+#Check FOV and rewrite json and save FOV
+save_name = os.path.basename(sys.argv[1]) + 'FOV.txt'
+textname = os.path.join(sys.argv[1], save_name)
+mylist = []
+for i in gws.items():
+	list_txt = ("%s_%s" %(b.get(i).get('RA'), b.get(i).get('DEC')))
+	mylist.append(list_txt)
+mylist = list(dict.fromkeys(mylist))
+print("Tiles No. : %s" %len(mylist))
+FOV = {}
+for i, j in mylist:
+	ra, dec = j.rsplit("_")
+	FOV.update({i: {'RA' : ra, 'DEC' : dec}})
+print(FOV)
+
+#Update FOV in dict
+for i, j in FOV.items():
+	for m, n in gws.items():
+		if float(gws[m].get('RA')) == float(FOV[i].get('RA')) and float(gws[m].get('DEC')) == float(FOV[i].get('DEC')):
+			gws[m].update({'FOV' = i})
+		else:
+			pass
 #Build JSON and write to file
 dumpjs = json.dumps(gws)
-textname = os.path.basename(sys.argv[1]) + '.txt'
+save_name = os.path.basename(sys.argv[1]) + '.txt'
+textname = os.path.join(sys.argv[1], save_name)
 with open(textname, 'w') as rj:
 	rj.write(dumpjs)
+	
+
