@@ -41,7 +41,7 @@ print(FOV)
 for i, j in FOV.items():
 	for m, n in gws.items():
 		if float(gws[m].get('RA')) == float(FOV[i].get('RA')) and float(gws[m].get('DEC')) == float(FOV[i].get('DEC')):
-			gws[m].update({'FOV' = i})
+			gws[m].update({'FOV' : i})
 		else:
 			pass
 #Build JSON and write to file
