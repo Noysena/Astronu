@@ -11,8 +11,10 @@ folder = os.path.join(sys.argv[1], "*.fits")
 filelist = glob.glob(folder)
 
 for i in filelist:
+    gws={}
     with fits.open(i) as hdul:
         hd = hdul[0].header
         center = {hd["FILENAME"] : {"FOV" : 999, "RA" : np.round(hd["RA"], 4), "DEC" : np.round(hd["DEC"], 4), "DATE-OBS" : hd["DATE-OBS"]}}
+	gws.update(center)
         print(center)
 		
