@@ -33,7 +33,7 @@ mylist = list(dict.fromkeys(mylist))
 print("Tiles No. : %s" %len(mylist))
 
 FOV = {}
-for i in mylist:
+for i, j in enumerate(mylist):
 	ra, dec = j.rsplit("_")
 	FOV.update({i: {'RA' : ra, 'DEC' : dec}})
 print(FOV)
