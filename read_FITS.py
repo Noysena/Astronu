@@ -26,4 +26,4 @@ for i in filelist:
 dumpjs = json.dumps(gws)
 textname = os.path.basename(sys.argv[1]) + '.txt'
 with open(textname, 'w') as rj:
-	rj.write(gws)
+	rj.write(dumpjs)
