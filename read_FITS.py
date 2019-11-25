@@ -19,6 +19,5 @@ for i in filelist:
 				    "SNAME": hd["SNAME"],
 				    "DATE-OBS" : hd["DATE-OBS"]}}
     gws.update(center)
-    print(center)
 print(gws)
 		
