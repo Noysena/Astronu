@@ -19,7 +19,7 @@ for i in filelist:
 				    "DEC" : np.round(hd["DEC"], 4),
 				    "SNAME": hd["SNAME"],
 				    "DATE-OBS" : hd["DATE-OBS"]}}
-	print(center)
+    print(center)
     gws.update(center)
 
 #Build JSON and write to file
