@@ -9,9 +9,8 @@ info = "Read FITS and export dictionary and dump to json format"
 
 folder = os.path.join(sys.argv[1], "*.fits")
 filelist = glob.glob(folder)
-
+gws={}
 for i in filelist:
-    gws={}
     with fits.open(i) as hdul:
         hd = hdul[0].header
         center = {hd["FILENAME"] : {"FOV" : 999,
