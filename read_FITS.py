@@ -19,7 +19,7 @@ for i in filelist:
 				    "DEC" : np.round(hd["DEC"], 4),
 				    "SNAME": hd["SNAME"],
 				    "DATE-OBS" : hd["DATE-OBS"]}}
-	gws.update(center)
-        print(center)
+    gws.update(center)
+    print(center)
 print(gws)
 		
