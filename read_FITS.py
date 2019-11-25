@@ -26,11 +26,12 @@ for i in filelist:
 save_name = os.path.basename(sys.argv[1]) + '_FOV.txt'
 textname = os.path.join(sys.argv[1], save_name)
 mylist = []
-for i in gws.items():
-	list_txt = ("%s_%s" %(gws.get(i).get('RA'), gws.get(i).get('DEC')))
+for i, j in gws.items():
+	list_txt = ("%s_%s" %(gws[i].get('RA'), gws[i].get('DEC')))
 	mylist.append(list_txt)
 mylist = list(dict.fromkeys(mylist))
 print("Tiles No. : %s" %len(mylist))
+
 FOV = {}
 for i, j in mylist:
 	ra, dec = j.rsplit("_")
