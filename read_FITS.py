@@ -27,7 +27,7 @@ save_name = os.path.basename(sys.argv[1]) + '_FOV.txt'
 textname = os.path.join(sys.argv[1], save_name)
 mylist = []
 for i in gws.items():
-	list_txt = ("%s_%s" %(b.get(i).get('RA'), b.get(i).get('DEC')))
+	list_txt = ("%s_%s" %(gws.get(i).get('RA'), gws.get(i).get('DEC')))
 	mylist.append(list_txt)
 mylist = list(dict.fromkeys(mylist))
 print("Tiles No. : %s" %len(mylist))
