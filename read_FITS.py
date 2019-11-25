@@ -29,6 +29,8 @@ mylist = []
 for i, j in gws.items():
 	list_txt = ("%s_%s" %(gws[i].get('RA'), gws[i].get('DEC')))
 	mylist.append(list_txt)
+
+#Eliminate duplicated FOV, then we have tiles of observation.
 mylist = list(dict.fromkeys(mylist))
 print("Tiles No. : %s" %len(mylist))
 
