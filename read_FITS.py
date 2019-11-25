@@ -23,7 +23,7 @@ for i in filelist:
     gws.update(center)
 
 #Check FOV and rewrite json and save FOV
-save_name = os.path.basename(sys.argv[1]) + 'FOV.txt'
+save_name = os.path.basename(sys.argv[1]) + '_FOV.txt'
 textname = os.path.join(sys.argv[1], save_name)
 mylist = []
 for i in gws.items():
@@ -36,6 +36,9 @@ for i, j in mylist:
 	ra, dec = j.rsplit("_")
 	FOV.update({i: {'RA' : ra, 'DEC' : dec}})
 print(FOV)
+dumpfov = json.dumps(FOV)
+with open(textname, 'w') as fov:
+	fov.write(dumpfov)
 
 #Update FOV in dict
 for i, j in FOV.items():
