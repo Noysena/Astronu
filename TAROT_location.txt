@@ -1,0 +1,8 @@
+
+tca = EarthLocation(lat= 43.75203*u.deg, lon=6.92353*u.deg, height=1320*u.m)
+tch = EarthLocation(lat=-29.25992*u.deg, lon=289.2674*u.deg, height=2398*u.m)
+tre = EarthLocation(lat=-21.19882*u.deg, lon=55.41022*u.deg, height=991*u.m)
+
+#010 PACA Caussols
+#181 Makes Observatory 
+#809 La Silla Observatory of the European Southern Observatory (ESO)
